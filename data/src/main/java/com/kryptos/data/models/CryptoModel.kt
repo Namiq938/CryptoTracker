@@ -19,17 +19,6 @@ data class CryptoModel(
         val currTime = System.currentTimeMillis()
         return (CryptoEntity(currTime, bpi.usdRate.rate, bpi.usdRate.currencyCode, time.updatedAt?.getUnixTime()))
     }
-
-    @SuppressLint("SimpleDateFormat")
-    fun getUpdateTime(): Long {
-        return try {
-            val utcFormat: DateFormat = SimpleDateFormat("MMM dd, yyyy HH:mm:ss Z")
-            utcFormat.timeZone = TimeZone.getTimeZone("UTC")
-            utcFormat.parse(time.updatedAt)!!.time
-        } catch (e: Exception) {
-            System.currentTimeMillis()
-        }
-    }
 }
 
 data class Bpi(
@@ -39,8 +28,8 @@ data class Bpi(
 
 
 data class Rate(
-    @SerializedName("rate")
-    val rate: String?,
+    @SerializedName("rate_float")
+    val rate: Float?,
     @SerializedName("code")
     val currencyCode: String?
 )

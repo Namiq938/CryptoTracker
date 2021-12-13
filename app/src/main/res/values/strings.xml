@@ -9,5 +9,7 @@
     <string name="min_bitcoin_value_button_title">Set Min</string>
     <string name="show_history_button_title">Show History</string>
     <string name="current_bitcoin_rate_title">Current Bitcoin Rate : </string>
+    <string name="max_checking_value_set">Max checking value has set successfully</string>
+    <string name="min_checking_value_set">Min checking value has set successfully</string>
 
 </resources>

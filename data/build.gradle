@@ -68,4 +68,7 @@ dependencies {
     kapt 'androidx.room:room-compiler:2.4.0-rc01'
     implementation 'androidx.room:room-ktx:2.3.0'
 
+    //Security
+    implementation "androidx.security:security-crypto:1.1.0-alpha03"
+
 }

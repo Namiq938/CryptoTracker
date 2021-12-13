@@ -13,7 +13,7 @@ import com.kryptos.data.models.Time
 data class CryptoEntity(
     @PrimaryKey
     val id: Long,
-    val rate: String?,
+    val rate: Float?,
     val currencyCode: String?,
     val updatedAt: Long?
 ) {

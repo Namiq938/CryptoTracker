@@ -9,5 +9,14 @@
         android:id="@+id/mainTrackerFragment"
         android:name="com.kryptos.cryptotracker.main.tracker.MainTrackerFragment"
         android:label="fragment_main_tracker"
-        tools:layout="@layout/fragment_main_tracker" />
+        tools:layout="@layout/fragment_main_tracker" >
+        <action
+            android:id="@+id/action_mainTrackerFragment_to_coinTrackHistoryFragment"
+            app:destination="@id/coinTrackHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coinTrackHistoryFragment"
+        android:name="com.kryptos.cryptotracker.main.history.CoinTrackHistoryFragment"
+        android:label="fragment_coin_track_history"
+        tools:layout="@layout/fragment_coin_track_history" />
 </navigation>

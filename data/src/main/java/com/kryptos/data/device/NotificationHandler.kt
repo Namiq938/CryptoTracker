@@ -18,6 +18,8 @@ object NotificationHandler {
             val importance = NotificationManager.IMPORTANCE_HIGH
             val channel = NotificationChannel(Constants.NOTIFICATION_CHANNEL_ID, name, importance)
             channel.description = description
+            channel.enableVibration(true)
+            channel.vibrationPattern = longArrayOf(100, 200, 300, 400, 500)
             val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
@@ -26,6 +28,7 @@ object NotificationHandler {
             .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(title)
             .setContentText(message)
+            .setVibrate(longArrayOf(100, 200, 300, 400, 500))
             .setPriority(NotificationCompat.PRIORITY_HIGH) // Set the intent that will fire when the user taps the notification
             .setAutoCancel(true)
         NotificationManagerCompat.from(context).notify(Constants.NOTIFICATION_ID, builder.build())

@@ -12,7 +12,10 @@ interface CryptoDao {
     fun getAllData(): Flow<List<CryptoEntity>>
 
     @Query("select * from crypto_items where id == :itemId")
-    fun getItemById(itemId: Long): LiveData<CryptoEntity>
+    fun getItemById(itemId: Long): Flow<CryptoEntity?>
+
+    @Query("SELECT * FROM crypto_items ORDER BY updatedAt DESC LIMIT 1")
+    fun getLastItem(): Flow<CryptoEntity?>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(cryptoEntity: CryptoEntity)
