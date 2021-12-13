@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Crypto Tracker</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="max_bitcoin_value_input_hint">Max Value</string>
+    <string name="max_bitcoin_value_button_title">Set Max</string>
+    <string name="min_bitcoin_value_input_hint">Min Value</string>
+    <string name="min_bitcoin_value_button_title">Set Min</string>
+    <string name="show_history_button_title">Show History</string>
+    <string name="current_bitcoin_rate_title">Current Bitcoin Rate : </string>
+
 </resources>

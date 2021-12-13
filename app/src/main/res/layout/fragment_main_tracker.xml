@@ -1,14 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".main.tracker.MainTrackerFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/min_value"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:hint="@string/min_bitcoin_value_input_hint"
+        android:padding="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/max_value"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13999999">
 
-</FrameLayout>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/min_value_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="@dimen/_16sdp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/max_value"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:hint="@string/max_bitcoin_value_input_hint"
+        android:padding="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/min_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="0.5"
+        app:layout_constraintStart_toEndOf="@+id/min_value"
+        app:layout_constraintTop_toTopOf="@+id/min_value">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/max_value_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="@dimen/_16sdp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/set_min_button"
+        style="@style/Tracker_Main_Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="@string/min_bitcoin_value_button_title"
+        app:layout_constraintEnd_toEndOf="@+id/min_value"
+        app:layout_constraintStart_toStartOf="@+id/min_value"
+        app:layout_constraintTop_toBottomOf="@+id/min_value" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/set_max_button"
+        style="@style/Tracker_Main_Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="@string/max_bitcoin_value_button_title"
+        app:layout_constraintEnd_toEndOf="@+id/max_value"
+        app:layout_constraintStart_toStartOf="@+id/max_value"
+        app:layout_constraintTop_toBottomOf="@+id/min_value" />
+
+
+    <TextView
+        android:id="@+id/current_bitcoin_rate_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:text="@string/current_bitcoin_rate_title"
+        android:textSize="@dimen/text_size_16sp"
+        app:layout_constraintBottom_toTopOf="@+id/current_bitcoin_rate"
+        app:layout_constraintStart_toStartOf="@+id/show_history" />
+
+
+    <TextView
+        android:id="@+id/current_bitcoin_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:textSize="@dimen/text_size_18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/show_history"
+        app:layout_constraintStart_toStartOf="@+id/show_history" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/show_history"
+        style="@style/Tracker_Main_Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/max_bitcoin_value_button_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/max_value"
+        app:layout_constraintStart_toStartOf="@+id/set_min_button"
+        app:layout_constraintTop_toBottomOf="@+id/set_min_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
