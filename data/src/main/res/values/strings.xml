@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="crypto_alert_title">Bitcoin Rate Alert</string>
+    <string name="crypto_alert_description_max">Bitcoin Rate got Max</string>
+    <string name="crypto_alert_description_min">Bitcoin Rate got Min</string>
+</resources>

@@ -14,7 +14,7 @@ class MainTrackerFragment : BaseFragment<MainTrackerViewModel, FragmentMainTrack
         get() = FragmentMainTrackerBinding::inflate
 
     override val onViewInit: FragmentMainTrackerBinding.() -> Unit = {
-
+        viewmodel.getCoinHistory()
     }
 
     override fun onClick(view: View?) {
